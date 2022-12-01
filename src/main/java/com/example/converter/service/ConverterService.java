@@ -115,4 +115,30 @@ public class ConverterService {
         }
         return sortArray(answer, param);
     }
+
+    public static String processingConvertHzToTime(String inputData, HttpServletResponse response) {
+        String validData = validData(inputData);
+        String answer;
+        if (validData == null) {
+            answer = convertToTime(inputData);
+        }
+        else {
+            response.setStatus(400);
+            answer = validData;
+        }
+        return answer;
+    }
+
+    public static String processingConvertTimeToHz(String inputData, HttpServletResponse response) {
+        String validData = validData(inputData);
+        String answer;
+        if (validData == null) {
+            answer = convertToHz(inputData);
+        }
+        else {
+            response.setStatus(400);
+            answer = validData;
+        }
+        return answer;
+    }
 }
