@@ -48,17 +48,71 @@ public class ConverterService {
         return answer;
     }
 
-    public static List<Double> sortArray(List<String> inputArrayData, String param) {
-        List<Double> answer = new ArrayList<>();
+    public static List<String> sortArray(List<String> inputArrayData, String param) {
+        List<Double> sortingArray = new ArrayList<>();
+        List<String> answer = new ArrayList<>();
         for (String elem: inputArrayData) {
-            answer.add(Double.parseDouble(elem));
+            sortingArray.add(Double.parseDouble(elem));
         }
         if (param.equalsIgnoreCase("ASC")) {
-            Collections.sort(answer);
+            Collections.sort(sortingArray);
         }
         else if (param.equalsIgnoreCase("DESC")) {
-            answer.sort(Collections.reverseOrder());
+            sortingArray.sort(Collections.reverseOrder());
+        }
+        sortingArray.forEach(elem -> answer.add(String.valueOf(elem)));
+        return answer;
+    }
+
+    public static List<String> processingConvertHzToTimeArray(List<String> inputArrayData, HttpServletResponse response) {
+        String validData = validArrayData(inputArrayData);
+        List<String> answer = new ArrayList<>();
+        if (validData == null) {
+            inputArrayData.forEach(elem -> answer.add(convertToTime(elem)));
+        }
+        else {
+            response.setStatus(400);
+            answer.add(validData);
         }
         return answer;
+    }
+
+    public static List<String> processingConvertHzToTimeArray(List<String> inputArrayData, String param, HttpServletResponse response) {
+        String validData = validArrayData(inputArrayData);
+        List<String> answer = new ArrayList<>();
+        if (validData == null) {
+            inputArrayData.forEach(elem -> answer.add(convertToTime(elem)));
+        }
+        else {
+            response.setStatus(400);
+            answer.add(validData);
+        }
+        return sortArray(answer, param);
+    }
+
+    public static List<String> processingConvertTimeToHzArray(List<String> inputArrayData, HttpServletResponse response) {
+        String validData = validArrayData(inputArrayData);
+        List<String> answer = new ArrayList<>();
+        if (validData == null) {
+            inputArrayData.forEach(elem -> answer.add(convertToHz(elem)));
+        }
+        else {
+            response.setStatus(400);
+            answer.add(validData);
+        }
+        return answer;
+    }
+
+    public static List<String> processingConvertTimeToHzArray(List<String> inputArrayData, String param, HttpServletResponse response) {
+        String validData = validArrayData(inputArrayData);
+        List<String> answer = new ArrayList<>();
+        if (validData == null) {
+            inputArrayData.forEach(elem -> answer.add(convertToHz(elem)));
+        }
+        else {
+            response.setStatus(400);
+            answer.add(validData);
+        }
+        return sortArray(answer, param);
     }
 }
