@@ -16,7 +16,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 
+    testImplementation("org.springframework.boot:spring-boot-test:2.7.0")
+
     implementation ("org.springframework.boot:spring-boot-starter-web")
+
 
     implementation("jakarta.servlet:jakarta.servlet-api:6.0.0")
 
