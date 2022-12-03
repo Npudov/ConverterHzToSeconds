@@ -1,20 +1,21 @@
 package com.example.converter.controller;
 
 import com.example.converter.service.ConverterService;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+//import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class ConverterController {
 
+    //public ConverterController() {}
 
     @GetMapping("/HzToTime")
-    public String hzToTimeConvert(@RequestParam("Frequency") String hzData, HttpServletResponse response) {
+    public String hzToTimeConvert(@RequestParam("frequency") String hzData, HttpServletResponse response) {
         return ConverterService.processingConvertHzToTime(hzData, response);
     }
 
