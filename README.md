@@ -1,3 +1,6 @@
+![Build Status](https://github.com/Npudov/ConverterHzToSeconds/actions/workflows/gradleTests.yml/badge.svg?branch=main) (main)
+![Build Status](https://github.com/Npudov/ConverterHzToSeconds/actions/workflows/gradleTests.yml/badge.svg?branch=develop) (develop)
+
 # ConverterHzToSeconds
 An application that converts from `Hz` to `seconds`. Input values frequency in Hz. Output values time (period) in seconds.
 
