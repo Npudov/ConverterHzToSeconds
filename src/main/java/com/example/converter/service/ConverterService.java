@@ -122,6 +122,7 @@ public class ConverterService {
         String answer;
         if (validData == null) {
             answer = convertToTime(inputData);
+            //response.setStatus(200);
         }
         else {
             response.setStatus(400);
