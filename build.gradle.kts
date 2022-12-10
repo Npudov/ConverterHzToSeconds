@@ -15,14 +15,19 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+    testImplementation("io.rest-assured:rest-assured:4.3.0")
+    testImplementation("io.rest-assured:json-path:4.3.0")
+    testImplementation("io.rest-assured:xml-path:4.3.0")
+    testImplementation("io.rest-assured:json-schema-validator:4.3.0")
+    testImplementation("io.rest-assured:spring-mock-mvc:4.3.0")
+    testImplementation("io.rest-assured:spring-web-test-client:4.3.0")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+
 
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
-
-    //testCompileOnly("org.projectlombok:lombok:1.18.24")
-    //testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
 
 
     implementation("org.projectlombok:lombok:1.18.24")
