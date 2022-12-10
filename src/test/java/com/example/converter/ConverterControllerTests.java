@@ -10,15 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.RestAssured.*;
 
-//import static io.restassured.RestAssured.given;
 
-//@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ConverterControllerTests {
 
     @BeforeAll
     public static void setup() throws Exception {
-        //RestAssured.baseURI = "https://localhost:";
         RestAssured.port = 8080;
     }
 
