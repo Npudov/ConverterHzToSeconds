@@ -45,6 +45,14 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
+tasks.jar {
+    manifest.attributes["Main-Class"] = "com.example.converter.ConverterApplication"
+}
+
+/*java {
+    withSourcesJar()
+}*/
+
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
