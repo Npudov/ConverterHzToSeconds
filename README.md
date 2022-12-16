@@ -15,20 +15,6 @@ Reverse converting
 GET localhost:8080/TimeToHz?time=1020.28
 ```
 
-## Array input data
-```
-GET localhost:8080/HzToTimeArray with body ["100.58", "25.24"]
-```
-
-```
-GET localhost:8080/TimeToHzArray with body ["100.58", "25.24"]
-```
-
-## Sorting values
-```
-GET localhost:8080/HzToTimeArray?direction=ASC
-```
-
 # Run Docker
 
 Clone repository
